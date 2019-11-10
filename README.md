@@ -44,11 +44,12 @@ Elas são escritas delimitando seu conteúdo entre aspas.
 "Patch my boat with chewing gum"  
 'Monkeys wave goodbye'  
 
-Quase tudo pode ser colocado entre aspas, e o JavaScript vai fazer um valor de string com isso. Mas alguns caracteres são difíceis.  
-Você pode imaginar como colocar aspas entre aspas deve ser difícil. Novas linhas, as coisas que você obtém quando pressiona enter, também não podem ser colocadas entre aspas - a string tem que estar em uma linha única.  
+Quase tudo pode ser colocado entre aspas, e o JavaScript vai fazer um valor de string com isso.  
 
 Para ser capaz de ter estes caracteres em uma string, a convenção seguinte é usada:  
+
 Sempre que um barra invertida \ é encontrada dentro do texto entre aspas, isto indica que o caracter depois desta tem um significado especial.  
+
 Uma aspa precedida de uma barra invertida não vai findar a string, mas ser parte dela.  
 Quando um caracter ‘n’ correr depois de uma barra invertida, será interpretado como uma nova linha.  
 Similarmente, um ‘t’ depois da barra invertida significa o caracter tab.  
@@ -61,12 +62,13 @@ O verdadeiro texto contido é:
 This is the first line  
 And this is the second  
 
-Existe, obviamente, situações onde você quer uma barra invertida em uma string apenas como uma barra invertida. Não um código especial.  Se duas barras invertidas estiverem seguidas uma da outra, elas se anulam, e somente uma vai ser deixada no valor da string resultante. 
+Se duas barras invertidas estiverem seguidas uma da outra, elas se anulam, e somente uma vai ser deixada no valor da string resultante. 
 Assim é como a string A newline character is written like "\n" can be written:  
 
 "A newline character is written like \"\\n\"."   
 
-Strings não podem ser divididas, multiplicadas ou subtraídas, mas o operador + pode ser usado nelas. Ele não adiciona, mas concatena - ele cola duas strings unindo-as. A linha seguinte vai produzir a string concatenate:  
+Strings não podem ser divididas, multiplicadas ou subtraídas, mas o operador + pode ser usado nelas.  
+Ele não adiciona, mas concatena - ele cola duas strings unindo-as. A linha seguinte vai produzir a string concatenate:  
 
 "con" + "cat" + "e" + "nate"  
 
@@ -74,7 +76,7 @@ Strings não podem ser divididas, multiplicadas ou subtraídas, mas o operador +
 
 Nem todos operadores são símbolos. Alguns são palavras escritas.  
 Um exemplo é o operador typeof, que produz uma string com o valor do tipo dado para fornecido para avaliação.  
-
+```
 console.log(typeof 4.5) // number  
 console.log(typeof "x") // string  
-
+```
