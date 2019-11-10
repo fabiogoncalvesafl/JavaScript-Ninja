@@ -29,7 +29,7 @@ Quando múltiplos operadores com a mesma precedência estão próximos uns aos o
 
 Estas regras de precedência não é algo que você deva se preocupar. Quando em dúvida, somente adicione parênteses.  
 
-## Números Especiais
+### Números Especiais
 
 Existem 3 valores especiais no JavaScript que são considerados números, mas não comportam-se como números normais.  
 
@@ -79,4 +79,20 @@ Um exemplo é o operador typeof, que produz uma string com o valor do tipo dado 
 ```
 console.log(typeof 4.5) // number  
 console.log(typeof "x") // string  
+```
+Os outros operadores que vimos sempre operam com 2 valores; typeof pega somente um.  
+Operadores que usam 2 valores são chamados operadores binários, enquanto aqueles que pegam um são chamados operadores unários.  
+O operador menos - pode ser usado como operador binário e unário.  
+```
+console.log(- (10 - 2)) // -8
+```
+
+## Valores Booleanos
+As vezes, você vai precisar de um valor que simplesmente distingue entre 2 possibilidades, “sim” ou “não”, ou “ligado” e “desligado”. Para isso o JavaScript tem um tipo booleano, que tem apenas dois valores, true e false (que são escritos com estas palavras mesmo).
+
+### Comparações
+Aqui temos uma maneira de produzir valores booleanos:  
+```
+console.log(3 > 2) // true
+console.log(3 < 2) // false
 ```
