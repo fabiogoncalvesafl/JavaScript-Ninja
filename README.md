@@ -1,98 +1,449 @@
-# Eloquent-JS
+# JavaScript-Ninja
 Repositorio para estudo do JavaScript
 
-## Valores, Tipos e Operadores
-Temos seis tipos básicos de valores no JavaScript: números, strings, booleans, objetos, funções e valores indefinidos.  
-Em inglês: [number, string, boolean, object, function, undefined]  
+## Dicas e orientações sobre JavaScript - Ninja
 
-### Números
-Valores do tipo numbers são, previsivelmente, valor numéricos.  
-Em um programa JavaScript, eles são escritos usualmente assim:  
+## Variáveis e Tipos de Dados
 
-13  
+### Variáveis 
+- Nomes simbólicos de valores
+- Palavra chave "var"
+´´´
+var myvar;
+myvar = 10;
+´´´
+### Tipos de Dados
+- number
+36
+- string
+'Fábio'
+- boolean
+true or false
+- null
+- undefined
+- object {}
+- array []
 
-## Aritmética
+### Operadores Aritméticos
 
-### Operadores
++ Adição
+- Subtração
+* Multiplicação
+/ Divisão
 
-   Adição (+)  
-   Subtração (-)  
-   Multiplicação (*)  
-   Divisão (/)  
-   Resto (%) - Restante da operação  
+### Operadores Aritméticos Abreviados
 
-### Ordem de precedência
+++ (soma = soma + 1)
+--  (subtracao = subtracao - 1)
++= (soma = soma + soma) 
+-= (subtracao = subtracao - subtracao)
+*= (multiplicacao = multiplicacao * multiplicacao)
+/= (divisao = divisao / divisao)
 
-Quando operadores aparecem juntos sem parênteses, a ordem que eles vão ser aplicados é determinada pela precedência dos operadores.  
-O exemplo mostra que a multiplicação vem antes da adição. / tem a mesma precedência de *. Igualmente para + e -.  
-Quando múltiplos operadores com a mesma precedência estão próximos uns aos outros (como em 1 - 2 + 1), eles são aplicados da esquerda para a direita. A precedência deste operador (%) é igual a da multiplicação e divisão.  
+### Operadores de igualdade / Relacionais
 
-Estas regras de precedência não é algo que você deva se preocupar. Quando em dúvida, somente adicione parênteses.  
+== igual a
 
-### Números Especiais
+!= diferente de
 
-Existem 3 valores especiais no JavaScript que são considerados números, mas não comportam-se como números normais.  
+=== igual a, e do mesmo tipo
 
-Os dois primeiros são Infinity e -Infinity, que são usados para representar os infinitos positivo e negativo.  
-NaN significa “not a number” (não é um número).  
+!== diferente de, mas do mesmo tipo
 
-## Strings
 
-O próximo tipo básico de dado é a string. Strings são usadas para representar texto.  
-Elas são escritas delimitando seu conteúdo entre aspas.  
 
-"Patch my boat with chewing gum"  
-'Monkeys wave goodbye'  
+> Maior que
 
-Quase tudo pode ser colocado entre aspas, e o JavaScript vai fazer um valor de string com isso.  
+< Menor que
 
-Para ser capaz de ter estes caracteres em uma string, a convenção seguinte é usada:  
+>= Maior ou igual a
 
-Sempre que um barra invertida \ é encontrada dentro do texto entre aspas, isto indica que o caracter depois desta tem um significado especial.  
+<= Menor ou igual a
 
-Uma aspa precedida de uma barra invertida não vai findar a string, mas ser parte dela.  
-Quando um caracter ‘n’ correr depois de uma barra invertida, será interpretado como uma nova linha.  
-Similarmente, um ‘t’ depois da barra invertida significa o caracter tab.  
 
-Veja a string seguinte:
 
-"This is the first line\nAnd this is the second"  
-O verdadeiro texto contido é:  
+## Funções
+´´´
+function funcao(){}
+´´´
+- Blocos de código Javascript nomeados, que podem ser invocados usando o operador ()
+´´´
+funcao();
+´´´
+- Criam escopo
+´´´
+function soma(a, b){
 
-This is the first line  
-And this is the second  
+    a + b;
 
-Se duas barras invertidas estiverem seguidas uma da outra, elas se anulam, e somente uma vai ser deixada no valor da string resultante. 
-Assim é como a string A newline character is written like "\n" can be written:  
+} 
+´´´
+- Podem retornar valores
+´´´
+function soma(a, b){
 
-"A newline character is written like \"\\n\"."   
+    return a + b;
 
-Strings não podem ser divididas, multiplicadas ou subtraídas, mas o operador + pode ser usado nelas.  
-Ele não adiciona, mas concatena - ele cola duas strings unindo-as. A linha seguinte vai produzir a string concatenate:  
+}
+´´´
+- Podem receber argumentos (ou parâmetros)
+´´´
+function soma (x ,y, z){
 
-"con" + "cat" + "e" + "nate"  
+    return x + y +z;
 
-## Operadores Unários
+}
+´´´
 
-Nem todos operadores são símbolos. Alguns são palavras escritas.  
-Um exemplo é o operador typeof, que produz uma string com o valor do tipo dado para fornecido para avaliação.  
-```
-console.log(typeof 4.5) // number  
-console.log(typeof "x") // string  
-```
-Os outros operadores que vimos sempre operam com 2 valores; typeof pega somente um.  
-Operadores que usam 2 valores são chamados operadores binários, enquanto aqueles que pegam um são chamados operadores unários.  
-O operador menos - pode ser usado como operador binário e unário.  
-```
-console.log(- (10 - 2)) // -8
-```
+### Operadores Lógicos
 
-## Valores Booleanos
-As vezes, você vai precisar de um valor que simplesmente distingue entre 2 possibilidades, “sim” ou “não”, ou “ligado” e “desligado”. Para isso o JavaScript tem um tipo booleano, que tem apenas dois valores, true e false (que são escritos com estas palavras mesmo).
 
-### Comparações
-Aqui temos uma maneira de produzir valores booleanos:  
-```
-console.log(3 > 2) // true
-console.log(3 < 2) // false
-```
+
+&& (AND)
+
+- Se duas ou mais condições são verdadeiras
+
+|| (OR)
+
+- Se pelo menos uma condição for verdadeira
+
+! (NOT)
+
+- Inverte o valor
+
+
+
+### Operadores Unários
+
+- Quando você utiliza somente ele e outro valor
+
++ e -
+
+Converte para um número ou NaN
+´´´
++'3' 
+
+3
+
++'fabio'
+
+NaN
+´´´
+Observação:
+
+Serve para também concatenar (juntar)
+´´´
+'Fá'+'bio'
+
+Fabio
+
+-'3'
+
+-3
+´´´
+
+## Estrutura Léxica
+
+- Case Sensitive
+
+## Comentários
+
+- De linha - //
+
+- De bloco - /* */
+
+## Literais
+´´´
+12
+
+1.2
+
+'ninja'
+
+"ninja"
+
+true
+
+null
+
+{a: 1}
+
+[1, 2]
+´´´
+## Identificadores
+
+_ ou $
+
+letras de a a z
+
+letras de A a Z
+
+dígitos 0 a 9
+
+qualquer carácter Unicode
+
+## Palavras Reservadas
+
+- break
+
+- case
+
+- catch
+
+- if
+
+- for
+
+- typeof
+
+- var 
+
+...
+
+
+## Instruções Condicionais
+
+### if
+´´´
+var a = 12;
+
+var b = 10;
+
+if(a > b){
+
+    return "A variável " + a + " é maior!";
+
+}     
+´´´
+### else 
+´´´
+var a = 10;
+
+var b = 12;
+
+if(a > b){
+
+    return "É maior!";
+
+}else{
+
+    return "É menor!";
+
+}
+´´´
+
+### else if
+´´´
+var a = 10;
+
+var b = 10;
+
+if(a > b){
+
+    return "É maior!";
+
+}else if (a < b){
+
+    return "É menor!";
+
+}else if(a === b){
+
+    return "É igual!";
+
+}else{
+
+    return null;
+
+}
+
+´´´
+
+## Tipos
+
+- Tipos Primitivos
+
+- Tipos Objeto
+
+## Tipos Primitivos
+
+- number
+
+- string
+
+- boolean
+
+- null e undefined
+
+## Tipos Objeto
+
+- Todos os outros
+
+## Objeto
+
+- Conjunto de Propriedades {nome: valor}
+´´´
+var pessoa = {
+    nome: 'Fábio',
+    sobrenome: 'Gonçalves',
+    sexo: 'Masculino',
+    idade: 36,
+    altura: 1.75,
+    peso: 88,
+    andando: false,
+    caminhouQuantosMetros: 0
+}
+´´´
+## Métodos de Objeto
+
+- Recebe uma função
+´´´
+pessoa.fazerAniversario = function(){
+    pessoa.idade++;
+}
+´´´
+- Invoca o metodo
+´´´
+pessoa.fazerAniversario();
+´´´
+
+## Truthy e Falsy
+
+- Testa se o retorno de um valor é booleano
+´´´
+var teste;
+
+if(1){ teste = true; } else { teste = false; }
+
+true
+
+if(1){ teste = true; } else { teste = false; }
+
+false
+´´´
+## Falsy
+
+- undefined
+
+- null
+
+- NaN
+
+- 0
+
+- -0
+
+- ''
+
+- ""
+´´´
+if(undefined){ teste = true; } else { teste = false; }
+
+if(null){ teste = true; } else { teste = false; }
+
+if(NaN){ teste = true; } else { teste = false; }
+
+if(0){ teste = true; } else { teste = false; }
+
+if(-0){ teste = true; } else { teste = false; }
+
+if(''){ teste = true; } else { teste = false; }
+
+if(""){ teste = true; } else { teste = false; }
+
+´´´
+
+## Truthy
+
+- Todos os outros valores
+
+## Truthy e Falsy
+
+### Descobrir a representação booleana: !!
+´´´
+!!true
+
+!!'fabio'
+
+!!0
+
+!!false
+
+!!1
+
+!!''
+
+!!""
+
+!!undefined
+
+!!null
+
+!!NaN
+´´´
+
+## Condicional Ternário
+´´´
+condição ? true : false;
+
+1 === 2 ? true : false;
+
+var sexo = 'Masculino';
+
+var sexo = sexo === 'Feminino' ? 'a' : 'o';
+
+sexo
+
+'o'
+´´´
+
+## Escopo de Variáveis
+
+- Global (Quando é declarada fora da função) 
+
+- Local (Quando é declarada dentro da função)
+
+## function cria escopo local
+
+- Quando é criado a variável dentro da função a mesma fica visível dentro da mesma
+
+## Variável Global
+
+- Fica visível para acessar dentro de funções e blocos de código.
+
+### IMPORTANTE: Sempre utilize var para declarar uma variável.
+
+Pois senão o Javascript interpreta como uma variável global. 
+
+Exemplo:
+´´´
+function newFunction(){
+
+    newVar = 'Variável Global';
+
+    return newVar;
+
+}
+
+newVar
+
+undefined
+
+newFunction(); // Quando chamar a função, ele irá criar a variável como Global porque não foi definido com a palavra var. 
+
+'Variável Global'
+
+newVar
+
+'Variável Global'
+´´´
+### O garbage Colector não será capaz de excluir a variável Global, então isso pode consumir recurso da sua máquina.
+
+### Dicas para utilizar o Navegador e console do Node ###
+
+#### No navegador: Em inspecionar na aba console.
+
+- Quando escrever o código Javascript para testar, se precisar pular uma linha tem que pressionar o botão shift + enter.
+
+#### No console do Node
+
+- Quando precisar pular uma linha basta ter um bloco de código e pressionar enter que irá pular uma linha.
