@@ -31,31 +31,30 @@ true or false
 
 ## Operadores Aritméticos Abreviados
 
-++ (soma = soma + 1)
---  (subtracao = subtracao - 1)
-+= (soma = soma + soma) 
--= (subtracao = subtracao - subtracao)
-*= (multiplicacao = multiplicacao * multiplicacao)
-/= (divisao = divisao / divisao)
+- ++ (soma = soma + 1)
+- --  (subtracao = subtracao - 1)
+- += (soma = soma + soma) 
+- -= (subtracao = subtracao - subtracao)
+- *= (multiplicacao = multiplicacao * multiplicacao)
+- /= (divisao = divisao / divisao)
 
 ## Operadores de igualdade / Relacionais
 
-== igual a  
+- == igual a  
 
-!= diferente de  
+- != diferente de  
 
-=== igual a, e do mesmo tipo  
+- === igual a, e do mesmo tipo  
 
-!== diferente de, mas do mesmo tipo  
+- !== diferente de, mas do mesmo tipo  
 
-> Maior que  
+- > Maior que  
 
-< Menor que  
+- < Menor que  
 
->= Maior ou igual a  
+- >= Maior ou igual a  
 
-<= Menor ou igual a  
-
+- <= Menor ou igual a  
 
 ## Funções
 ```js
@@ -428,14 +427,14 @@ newVar
 
 'Variável Global'
 ```
-## O garbage Colector não será capaz de excluir a variável Global, então isso pode consumir recurso da sua máquina. ##
+### O garbage Colector não será capaz de excluir a variável Global, então isso pode consumir recurso da sua máquina. ##
 
-### Dicas para utilizar o Navegador e console do Node
+#### Dicas para utilizar o Navegador e console do Node
 
-### No navegador: Em inspecionar na aba console.
+#### No navegador: Em inspecionar na aba console.
 
 - Quando escrever o código Javascript para testar, se precisar pular uma linha tem que pressionar o botão shift + enter.
 
-### No console do Node
+#### No console do Node
 
 - Quando precisar pular uma linha basta ter um bloco de código e pressionar enter que irá pular uma linha.
