@@ -48,9 +48,9 @@ true or false
 
 - !== diferente de, mas do mesmo tipo  
 
-- > Maior que  
+-  > Maior que  
 
-- < Menor que  
+-  < Menor que  
 
 - >= Maior ou igual a  
 
@@ -372,7 +372,7 @@ if(""){ teste = true; } else { teste = false; }
 !!NaN
 ```
 
-# Condicional Ternário
+## Condicional Ternário
 ```js
 condição ? true : false;
 
@@ -387,7 +387,7 @@ sexo
 'o'
 ```
 
-# Escopo de Variáveis
+## Escopo de Variáveis
 
 - Global (Quando é declarada fora da função) 
 
@@ -438,3 +438,185 @@ newVar
 #### No console do Node
 
 - Quando precisar pular uma linha basta ter um bloco de código e pressionar enter que irá pular uma linha.
+
+## Retorno de Funções com Arrays e Objetos
+- Além dos tipos primitivos
+- Pode retornar array []
+- Pode retornar objeto {}
+
+## Parâmetros de Funções como Arrays e Objetos 
+
+```js
+var myArray = ['Fábio', 36, true, {a: 1}, function(){}];
+
+function myFunction(array){
+	return array;
+}
+
+console.log(myFunction(myArray)[1]);
+
+function twoParam(array, indice){
+	return array[indice];
+}
+
+var array2 = ['Ninja', 1, true, [1,2,3], {a: NaN}];
+
+console.log(twoParam(array2,0));
+console.log(twoParam(array2,1));
+console.log(twoParam(array2,2));
+console.log(twoParam(array2,3));
+console.log(twoParam(array2,4));
+
+function book(bookName){
+	var allBooks = {
+		'Segredos do Ninja Javascript': {
+			quantidadePaginas: 488,
+			autor: 'John Resig & Bear Bibeault',
+			editora: 'Novatec'
+		},
+		'Introdução ao HTML5': {
+			quantidadePaginas: 220,
+			autor: 'Bruce Lawson & Remy Sharp',
+			editora: 'Alta Books'
+		},
+		'Smashing CSS': {
+			quantidadePaginas: 283,
+			autor: 'Erick A. Meyer',
+			editora: 'Bookman'
+		}
+	};
+	
+	return !bookName ? allBooks : allBooks[bookName];
+}
+
+console.log(book());
+
+var bookName = 'Smashing CSS';
+console.log('O livro '+bookName+' tem '+book(bookName).quantidadePaginas+' páginas!');
+
+console.log('O autor do livro '+bookName+' é '+book(bookName).autor+'.');
+
+console.log('O livro '+bookName+' foi publicado pela editora '+book(bookName).editora+'.');
+```
+## Operador virgula
+```js
+var a, b = 2, c;
+
+function myFunction(){
+    var x = 0;
+    return (x += 1, x);
+    // return ++x
+```
+
+## Estrutura Condicional - Switch
+
+```js
+function convertToHex(color){
+    var hexa;
+    switch(color){
+        case 'red':
+            hexa = '#FF0000';
+            break;
+        case 'blue':
+            hexa = '#0000FF';
+            break;
+        case 'yellow':
+            hexa = '#FFFF00';
+            break;
+        case 'green':
+            hexa = '#008000';
+            break;
+        case 'white':
+            hexa = '#FFFFFF';
+            break;
+        default:
+            return 'Não temos o equivalente hexadecimal para '+color+'.';
+    }
+    return 'O hexadecimal para a cor '+color+' é '+hexa+'.'
+} 
+
+/*
+Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
+*/
+console.log(convertToHex('red'));
+console.log(convertToHex('blue'));
+console.log(convertToHex('yellow'));
+console.log(convertToHex('green'));
+console.log(convertToHex('white'));
+console.log(convertToHex('gray'));
+console.log(convertToHex('black'));
+console.log(convertToHex('orange'));
+```
+
+## Estrutura de Repetição (loop) - While
+
+```js
+/*
+Utilizando a estrutura de repetição `while`, mostre no console todos os números
+pares entre 10 e 20, inclusive esses 2.
+*/
+console.log( 'Números pares entre 10 e 20:' );
+var num = 10;
+while(num <= 20){
+	num % 2 === 0 ? console.log(num) : '';
+	num++;
+}
+
+/*
+Na mesma ideia do exercício acima: mostre agora os números ímpares.
+*/
+console.log( 'Números ímpares entre 10 e 20:' );
+while(num < 20){
+	num % 2 === 1 ? console.log(num) : '';
+	num++
+}
+```
+
+## Operador Módulo %
+- Resto de divisão (inteiro)
+
+```js
+10 % 2
+0
+15 % 2
+1
+```
+
+## Arrays - Propridade - length
+
+```js
+var array = ['Fabio', 36, true, {cor: 'azul'}, function soma(x, y){return x + y;}];
+array.length;
+
+function addItem(param){
+	array.push(param);
+	return array;
+}
+
+addItem(['a', 'b', 'c']);
+
+console.log('O segundo array tem '+array[5].length+' itens.');
+```
+
+## Arrays - Método - .push()
+- push é empurrar (adicionar)
+
+```js
+array.push('Gonçalves');
+//Vai adicionar na última posição do array a string 'Gonçalves'
+```
+
+## Estrutura de Repetição (Loop) - for
+- for(init; condition; final-expression)
+
+```js
+console.log( 'Números pares entre 100 e 120:' );
+for(var number = 100; number <= 120; number++){
+	number % 2 === 0 ? console.log(number) : '';
+}
+
+console.log( 'Números ímpares entre 111 e 125:' );
+for(var number = 111; number <= 125; number++){
+	number % 2 === 1 ? console.log(number) : '';
+}
+```
