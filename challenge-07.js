@@ -15,7 +15,7 @@ function addItem(param){
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addItem(['a', 'b', 'c']);
+console.log( addItem(['a', 'b', 'c']) );
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
@@ -47,6 +47,7 @@ while(num <= 20){
 /*
 Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
+num = 10;
 console.log( 'Números ímpares entre 10 e 20:' );
 while(num < 20){
 	num % 2 === 1 ? console.log(num) : '';
