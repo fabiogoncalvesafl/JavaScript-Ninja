@@ -620,3 +620,148 @@ for(var number = 111; number <= 125; number++){
 	number % 2 === 1 ? console.log(number) : '';
 }
 ```
+## Funções - A Importância de nomear funções
+
+- Sempre nomear
+- Ao invés disso:
+```js
+var func = function(){   
+};
+```
+
+- Prefira isso:
+```js
+var func = function func(){   
+};
+```
+### Porque?
+- Facilita o debug (Consegue obter o nome)
+
+- Sem nomear:
+```js
+var func = function(){   
+    return 'hi';
+};
+
+func(); //'hi'
+func.name; //''
+```
+- Nomeando:
+```js
+var func = function func(){   
+    return 'hi';
+};
+
+func(); //'hi'
+func.name; //'func'
+
+function myFunction(){
+    return 'function';
+}
+
+myFunction(); //'function'
+myFunction.name; //myFunction
+```
+
+## Indrodução ao Functional Programming
+
+### Funções
+- Objetos de primeira classe
+- 'Cidadões' de primeira classe
+{} <3 function(){}
+
+- Como você usa objetos literais...
+```js
+var car = {
+    brand: 'Chevrolet',
+    model: 'Silverado'
+};
+```
+
+- Você pode criar funções literais!
+```js
+function sum(x, y){
+    return x + y;
+}
+```
+
+- Como você atribui objetos à variáveis...
+```js
+var obj ={};
+```
+
+- Você pode atribuir funções:
+```js
+var func = function func(){};
+```
+
+- Como você retorna objetos em uma função...
+```js
+function person(){
+    return {
+        name: 'Fábio',
+        lasName: 'Gonçalves'
+    };
+}
+
+// ou numa segunda abordagem...
+
+function person(){
+    var info = {
+        name: 'Fábio',
+        lasName: 'Gonçalves'
+    };
+    return info;
+}
+
+console.log(person().name);
+console.log(person().lasName);
+
+```
+
+- Você também pode retornar funções!
+```js
+function adder(x){
+    return function(y){
+        return x + y;
+    };
+}
+
+// outra abordagem
+
+function adder(x){
+    function addOther(y){
+        return x + y;
+    }
+    return addOther;
+}
+
+var add2 = adder(2);
+console.log(add2(3)); //5
+
+console.log(adder(2)(3)); //5
+```
+
+- Como você passa objetos por parâmetros...
+```js
+var car = {
+    color: 'yellow'
+};
+
+function getCarColor(mycar){
+    return mycar.color;
+}
+
+console.log(getCarColor(car));
+//'yellow'
+
+function showOtherFunction(func){
+    return func();
+}
+
+showOtherFunction(function(){
+    return 'Function JS Ninja!';
+});
+
+//'Function JS Ninja!'
+```
