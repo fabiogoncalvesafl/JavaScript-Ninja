@@ -74,7 +74,7 @@ function calcutator(operator){
 				result = number1 % number2;
 				break;
 			default:
-				result = 'Operação inválida.';
+				result = 'Operação inválida';
 				break;			 		
 		}
 		return 'Resultado da operação: '+number1+' '+operator+' '+number2+' = '+result+'.';
