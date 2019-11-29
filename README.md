@@ -766,4 +766,108 @@ showOtherFunction(function(){
 //'Function JS Ninja!'
 ```
 
+## Função dentro de função é permitido.
+- Mas, e o escopo?
+```js
+function myFunction(){
+    function sum(){
+        return 1 + 2;
+    }
+    return sum();
+}
 
+console.log(myFunction()); //3
+console.log(sum()); // Irá apresentar um erro informando que sum não foi definido.
+```
+
+## HOISTING
+- Içamento ou Elevação de funções literais
+
+```js
+function myFunction(){
+    var number1 = 1;
+    var number2 = 2;
+    return sum(); // teoricamente finaliza aqui mas acontece um hoisting
+    function sum(){
+        return number1 + number2;
+    }
+}
+
+console.log(myFunction());
+
+// Acontece isso - um hoisting
+function myFunction(){
+    function sum(){ //vai elevar a função literal para executar primeiro
+        return number1 + number2;
+    }
+    var number1 = 1;
+    var number2 = 2;
+    return sum(); 
+}
+
+
+console.log(myFunction());
+
+```
+- Içamento ou Elevação de variáveis 
+```js
+function myFunction(){
+    console.log(number1);
+    var number1 = 1;
+    console.log(number1);
+    return '';
+}
+
+console.log(myFunction());
+
+// Acontece isso - um hoisting
+
+function myFunction(){
+    var number1;
+    console.log(number1);
+    number1 = 1;
+    console.log(number1);
+    return '';
+}
+
+console.log(myFunction());
+
+```
+### Dica: Sempre declarar variáveis no início das funções
+
+
+## IIFE - Immediately-invoked function expression
+
+### Função auto-executável
+
+- Execução por invocação
+
+```js
+function sum(){
+    return 1 + 2;
+}
+
+console.log(sum());
+
+var sum2 = function(){
+    return 2 + 3;
+};
+
+console.log(sum2());
+
+var sum3 = function otherSum(){
+    return 5 + 8; 
+};
+
+console.log(sum3());
+console.log(otherSum()); //otherSum is not defined
+
+```
+- Tornar uma expressão de uma função utilizando '()', então pode ser auto-executada 
+- Assim cria um escopo local para função
+```js
+(function(){
+    console.log(1 + 2);
+})();
+
+```
