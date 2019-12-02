@@ -871,3 +871,48 @@ console.log(otherSum()); //otherSum is not defined
 })();
 
 ```
+
+## Wrapper Objects
+
+- Valores primitivos NÃO são objetos
+
+```js
+var name = 'Fábio';
+
+name.length; //5
+```
+
+-Então por que eles têm propriedades?
+
+### Contrutores
+
+- Criam novos objetos
+
+```js
+var name = new String('Fábio');
+var age = new Number(36);
+var ninja = new Boolean(true);
+```
+- Você não vai criar com os construtores e sim como literais
+- O Javascript é uma linguagem de tipagem dinamica.
+
+
+## Como testar tipos de valores?
+
+typeof <operand>
+
+```js
+typeof undefined; //'undefined'
+typeof function(){}; // 'function'
+typeof true; // 'boolean'
+typeof 10; //'number'
+typeof 'JS Ninja'; //'string'
+
+/* Qualquer outro objeto que não seja function => 'object' */
+
+typeof {}; // 'object'
+typeof []; // 'object'
+typeof null; // 'object' ??? - Erro de implementação no JS!
+```
+- Posso confiar no typeof?
+- Somente para valores primitivos
