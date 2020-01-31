@@ -139,7 +139,7 @@ Fabio
 
 - Case Sensitive
 
-```
+```js
 var animal = 'cachorro';
 var Animal = 'macaco';
 
@@ -148,7 +148,6 @@ Animal //'macaco'
 
 animal !== Animal
 true
-
 ```
 
 ## Comentários
@@ -182,7 +181,7 @@ letras de a a z
 
 letras de A a Z
 
-dígitos 0 a 9
+dígitos 0 a 9   
 
 
 Pode utilizar qualquer carácter Unicode
@@ -214,7 +213,7 @@ Pode utilizar qualquer carácter Unicode
 
 ## Instruções Condicionais
 
-## if
+## if (Se)
 ```js
 var a = 12;
 
@@ -226,7 +225,7 @@ if(a > b){
 
 }     
 ```
-## else 
+## else (Senão)
 ```js
 var a = 10;
 
@@ -245,7 +244,7 @@ if(a > b){
 }
 ```
 
-## else if
+## else if (Senão Se)
 ```js
 var a = 10;
 
