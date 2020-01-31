@@ -48,9 +48,9 @@ true or false
 
 - !== diferente de, mas do mesmo tipo  
 
--  > Maior que  
+- > Maior que  
 
--  < Menor que  
+- < Menor que  
 
 - >= Maior ou igual a  
 
@@ -88,6 +88,7 @@ function soma (x ,y, z){
 
 }
 ```
+- No literal de função, não é necessário utilizar o ';' no fechamento das chaves. 
 
 ## Operadores Lógicos
 
