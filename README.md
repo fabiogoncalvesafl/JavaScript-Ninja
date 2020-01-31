@@ -39,23 +39,23 @@ true or false
 - /= (divisao = divisao / divisao)
 
 ## Operadores de igualdade / Relacionais
+```
+== igual a  
 
-- == igual a  
+!= diferente de  
 
-- != diferente de  
+=== igual a, e do mesmo tipo  
 
-- === igual a, e do mesmo tipo  
+!== diferente de, mas do mesmo tipo  
 
-- !== diferente de, mas do mesmo tipo  
+> Maior que  
 
-- > Maior que  
+< Menor que  
 
-- < Menor que  
+>= Maior ou igual a  
 
-- >= Maior ou igual a  
-
-- <= Menor ou igual a  
-
+<= Menor ou igual a  
+```
 ## Funções
 ```js
 function funcao(){}
@@ -139,12 +139,23 @@ Fabio
 
 - Case Sensitive
 
+```
+var animal = 'cachorro';
+var Animal = 'macaco';
+
+animal //'cachorro'
+Animal //'macaco'
+
+animal !== Animal
+true
+
+```
+
 ## Comentários
-
-- De linha - //
-
-- De bloco - /* */
-
+```
+De linha - //
+De bloco - /* */
+```
 ## Literais
 ```js
 12
@@ -173,7 +184,9 @@ letras de A a Z
 
 dígitos 0 a 9
 
-qualquer carácter Unicode
+
+Pode utilizar qualquer carácter Unicode
+- Mas NÃO deve !
 
 ## Palavras Reservadas
 
@@ -183,6 +196,10 @@ qualquer carácter Unicode
 
 - catch
 
+- class
+
+- const 
+
 - if
 
 - for
@@ -191,7 +208,9 @@ qualquer carácter Unicode
 
 - var 
 
-...
+...  
+
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords>
 
 ## Instruções Condicionais
 
