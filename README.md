@@ -306,6 +306,11 @@ var pessoa = {
 ```
 ## Métodos de Objeto
 
+- Sintaxe:
+```js
+var objeto = { propriedade: 'valor', metodo: function(){} };
+```
+
 - Recebe uma função
 ```js
 pessoa.fazerAniversario = function(){
@@ -316,7 +321,6 @@ pessoa.fazerAniversario = function(){
 ```js
 pessoa.fazerAniversario();
 ```
-
 # Truthy e Falsy
 
 - Testa se o retorno de um valor é booleano
