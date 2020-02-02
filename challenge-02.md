@@ -43,7 +43,8 @@ Crie uma função com as seguintes características:
 function newFunction(a, b, c){
 	if(a === undefined || b === undefined || c === undefined){
 		return 'Preencha todos os valores corretamente!'
-	}else{
+	}
+	else{
 		return (a * b * c) + 2;
 	}
 }
@@ -72,13 +73,17 @@ Crie uma função com as seguintes características:
 function threeArgs(x, y, z){
 	if(x !== undefined && y === undefined && z === undefined){
 		return x;
-	}else if( x !== undefined && y !== undefined && z === undefined){
+	}
+	else if( x !== undefined && y !== undefined && z === undefined){
 		return x + y;
-	}else if(x !== undefined && y !== undefined && z !== undefined){
+	}
+	else if(x !== undefined && y !== undefined && z !== undefined){
 		return (x + y) / z;
-	}else if (x === undefined && y === undefined && z === undefined){
+	}
+	else if (x === undefined && y === undefined && z === undefined){
 		return false;
-	}else{
+	}
+	else{
 		return null;
 	}
 }
