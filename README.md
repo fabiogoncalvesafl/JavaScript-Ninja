@@ -401,9 +401,9 @@ condição ? true : false;
 
 1 === 2 ? true : false;
 
-var sexo = 'Masculino';
-
-var sexo = sexo === 'Feminino' ? 'a' : 'o';
+var pessoa = { sexo: 'Masculino' };
+var sexo;
+var sexo = pessoa.sexo === 'Feminino' ? 'a' : 'o';
 
 sexo
 
