@@ -126,7 +126,7 @@ carro.adicionarPessoas = function(numeroPessoas){
 
 	carro.quantidadePessoas  += numeroPessoas;
 	return 'Já temos '+totalPessoas+' pessoas no carro!';
-}
+};
 //REFATORANDO
 carro.adicionarPessoas = function(numeroPessoas){
 	var totalPessoas = carro.quantidadePessoas + numeroPessoas;
@@ -145,7 +145,7 @@ carro.adicionarPessoas = function(numeroPessoas){
 
 	carro.quantidadePessoas  += numeroPessoas;
 	return 'Já temos '+totalPessoas+' '+pluralOuSingular2+' no carro!';
-}
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -155,19 +155,19 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.obterCor(); //Verde
+carro.obterCor(); //"Verde"
 
 // Mude a cor do carro para vermelho.
 carro.mudarCor('Vermelho'); 
 
 // E agora, qual a cor do carro?
-carro.obterCor(); //Vermelho
+carro.obterCor(); //"Vermelho"
 
 // Mude a cor do carro para verde musgo.
 carro.mudarCor('verde musgo'); 
 
 // E agora, qual a cor do carro?
-carro.obterCor(); //verde musgo
+carro.obterCor(); //"verde musgo"
 
 // Qual a marca e modelo do carro?
 carro.obterMarcaModelo(); //"Esse carro é um Fiat Siena"
