@@ -30,14 +30,14 @@ true or false
 / Divisão
 
 ## Operadores Aritméticos Abreviados
-
+```
 - ++ (soma = soma + 1)
 - --  (subtracao = subtracao - 1)
 - += (soma = soma + soma) 
 - -= (subtracao = subtracao - subtracao)
 - *= (multiplicacao = multiplicacao * multiplicacao)
 - /= (divisao = divisao / divisao)
-
+```
 ## Operadores de igualdade / Relacionais
 ```
 == igual a  
