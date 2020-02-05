@@ -467,6 +467,19 @@ newVar
 - Pode retornar array []
 - Pode retornar objeto {}
 
+## Pode utilizar anotação de Arrays com Objetos
+```js
+var arr = [1, 2, 3];
+var arr2 = {
+    '0': 1,
+    '1': 2,
+    '2': 3
+};
+
+arr[0];
+arr2['0'];
+
+```
 ## Parâmetros de Funções como Arrays e Objetos 
 
 ```js
