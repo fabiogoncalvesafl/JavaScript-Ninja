@@ -22,8 +22,8 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-function twoParam(array, indice){
-	return array[indice];
+function twoParam(array, index){
+	return array[index];
 }
 
 /*
