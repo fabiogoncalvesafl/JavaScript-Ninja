@@ -87,7 +87,7 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-var bookName = 'Smashing CSS';
+var bookName = 'Segredos do Ninja Javascript';
 console.log('O livro '+bookName+' tem '+book(bookName).quantidadePaginas+' páginas!');
 
 /*
