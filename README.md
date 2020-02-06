@@ -617,8 +617,37 @@ while(num < 20){
 15 % 2
 1
 ```
+## Arrays
+```js
+var arr = ['Fabio', null, true, {bola: 'azul'}];
+
+console.log(arr[0]);
+console.log(arr[1]);
+console.log(arr[2]);
+console.log(arr[3].bola);
+```
 
 ## Arrays - Propridade - length
+
+```js
+var arr = ['Fabio', null, true, {bola: 'azul'}, function(){}];
+
+var qtd = arr.length;
+
+while(qtd > 0){
+    console.log(arr[--qtd]);
+}
+
+var qtd = arr.length;
+
+while(qtd > 0){
+    console.log(arr[--qtd]);
+    if(qtd === 3){
+        console.log(arr[qtd].bola);
+    }
+}
+```
+### Exemplo 2
 
 ```js
 var array = ['Fabio', 36, true, {cor: 'azul'}, function soma(x, y){return x + y;}];
@@ -641,7 +670,14 @@ console.log('O segundo array tem '+array[5].length+' itens.');
 array.push('Gonçalves');
 //Vai adicionar na última posição do array a string 'Gonçalves'
 ```
+### Exemplo:
+```js
+var arr2 = ['Fabio', null, true, {bola: 'azul'}];
 
+arr2.push({carro: 'BMW'});//push - Empurra na última posição do array.
+
+console.log(arr2);
+```
 ## Estrutura de Repetição (Loop) - for
 - for(init; condition; final-expression)
 
