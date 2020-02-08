@@ -53,7 +53,7 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
-function calcutator(operator){
+function calculator(operator){
 	return function(number1, number2){
 		var result;
 		switch(operator){
@@ -84,7 +84,7 @@ function calcutator(operator){
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
 */
-var sum = calcutator('+');
+var sum = calculator('+');
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
@@ -96,10 +96,10 @@ Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 `division` e `mod`, e atribua a elas a função `calculator`, passando o operador
 correto por parâmetro para cada uma delas.
 */
-var subtraction = calcutator('-');
-var multiplication = calcutator('*');
-var division = calcutator('/');
-var mod = calcutator('%');
+var subtraction = calculator('-');
+var multiplication = calculator('*');
+var division = calculator('/');
+var mod = calculator('%');
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
