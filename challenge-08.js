@@ -109,4 +109,4 @@ console.log(subtraction(10,2));
 console.log(multiplication(10,2));
 console.log(division(10,2));
 console.log(mod(10,5));
-console.log(calcutator('?')(10,2));
+console.log(calculator('?')(10,2));
