@@ -906,7 +906,8 @@ console.log(myFunction());
 
 ```
 ### Dica: Sempre declarar variáveis no início das funções
-
+### Depois as funções literais ###
+### No final o return ###
 
 ## IIFE - Immediately-invoked function expression
 
