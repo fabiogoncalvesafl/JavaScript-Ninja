@@ -968,7 +968,16 @@ var ninja = new Boolean(true);
 ```
 - Você não vai criar com os construtores e sim como literais
 - O Javascript é uma linguagem de tipagem dinamica.
+- O Javascript faz a conversão de tipo sem o new.
 
+### Conversores - sem o new
+- Convertem o tipo
+
+```js
+var name = String(30);//'30'
+var age = Number('150');//150
+var ninja = Boolean(0);//false
+```
 
 ## Como testar tipos de valores?
 
@@ -985,7 +994,21 @@ typeof 'JS Ninja'; //'string'
 
 typeof {}; // 'object'
 typeof []; // 'object'
+typeof NaN; // 'number'
 typeof null; // 'object' ??? - Erro de implementação no JS!
 ```
 - Posso confiar no typeof?
 - Somente para valores primitivos
+
+```js
+function subtract(num1, num2){
+    if(typeof num1 === 'number' && typeof num2 === 'number'){
+        return num1 - num2;
+    }
+    return 'Entre com dois numeros'
+}
+console.log( subtract(10, 2) );
+console.log( subtract('JS', 2) );
+console.log( subtract({}, []) );
+```
+
