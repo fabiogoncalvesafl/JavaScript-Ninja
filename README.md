@@ -905,9 +905,9 @@ function myFunction(){
 console.log(myFunction());
 
 ```
-### Dica: Sempre declarar variáveis no início das funções
-### Depois as funções literais ###
-### No final o return ###
+- Dica: Sempre declarar variáveis no início das funções
+- Depois as funções literais
+- No final declarar o return
 
 ## IIFE - Immediately-invoked function expression
 
