@@ -141,7 +141,7 @@
 	if( sum ){
 		number1 = 10;
 		number2 = 12;
-		console.log( showOperationMessage(operationSignal, number1, number2), sum( number1, number2 ) );
+		console.log( showOperationMessage( operationSignal, number1, number2), sum( number1, number2 ) );
 	}
 	else{
 		console.log( showErrorMessage( operationSignal ) );
