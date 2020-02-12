@@ -10,10 +10,11 @@
 	das variáveis. Analise o que está sendo impresso no console para saber como
 	resolver o problema corretamente.
 	*/
-	var five = Number('5');
+	var five = Number( '5' );
 	console.log( five + ' é número?', typeof five === 'number' );
 
-	var concat = String(10) + String(10);
+	var concat = String( 10 ) + 10;
+	//var concat = String( 10 ) + String( 10 );
 	console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
 	/*
@@ -26,19 +27,19 @@
 	propriedade, usando os valores passados por parâmetro.
 	*/
 	var operation = {
-		'+': function(number1, number2){
+		'+': function( number1, number2 ){
 			return number1 + number2;
 		},
-		'-': function(number1, number2){
+		'-': function( number1, number2 ){
 			return number1 - number2;
 		},
-		'*': function(number1, number2){
+		'*': function( number1, number2 ){
 			return number1 * number2;
 		},
-		'/': function(number1, number2){
+		'/': function( number1, number2 ){
 			return number1 / number2;
 		},
-		'%': function(number1, number2){
+		'%': function( number1, number2 ){
 			return number1 % number2;
 		}
 	};
@@ -53,10 +54,10 @@
 	Caso contrário, "false".
 	- O desafio é fazer o retorno sem usar "if" ou "switch".
 	*/
-	function isOperatorValid(operator){
+	function isOperatorValid( operator ){
 		//return (operator === '+' || operator === '-' || operator === '*' || operator === '/' || operator === '%');
 		//return operation[operator] !== undefined;
-		return !!operation[operator];
+		return !!operation[ operator ];
 	}
 
 	/*
@@ -71,17 +72,17 @@
 	operador passado para a função "calculator", e passando para esse método
 	os dois parâmetros da função de retorno de "calculator".
 	*/
-	function calculator(operator){
-		if(!isOperatorValid(operator)){
+	function calculator( operator ){
+		if( !isOperatorValid( operator ) ){
 			return false;
 		}
 
-		return function(x, y){
-			if(typeof x !== 'number' || typeof y !== 'number'){
+		return function( x, y ){
+			if( typeof x !== 'number' || typeof y !== 'number' ){
 				return false;
 			}
 
-			return operation[operator](x, y);
+			return operation[ operator ]( x, y );
 		};
 	}
 
@@ -92,7 +93,7 @@
 	'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
 	Essa função mostrará a mensagem da operação que criaremos mais abaixo.
 	*/
-	function showOperationMessage( operator, number1, number2){
+	function showOperationMessage( operator, number1, number2 ){
 		return 'A operação '+number1+' '+operator+' '+number2+' =';
 	}
 
@@ -102,7 +103,7 @@
 	Essa função deverá retornar a frase:
 	'Operação "[OPERATOR]" não permitida!'
 	*/
-	function showErrorMessage(operator){
+	function showErrorMessage( operator ){
 		return 'Operação "'+operator+'" não permitida!';
 	}
 
@@ -123,7 +124,7 @@
 	parâmetro a variável que recebeu o sinal da operação.
 	*/
 	operationSignal = '+';
-	var sum = calculator(operationSignal);
+	var sum = calculator( operationSignal );
 
 	/*
 	PASSO 3:
@@ -137,13 +138,13 @@
 	- O segundo, a função de soma, passando os dois operandos.
 	- Se "sum" for "false", mostrar no console a mensagem de erro.
 	*/
-	if(sum){
+	if( sum ){
 		number1 = 10;
 		number2 = 12;
-		console.log( showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
+		console.log( showOperationMessage(operationSignal, number1, number2), sum( number1, number2 ) );
 	}
 	else{
-		console.log(showErrorMessage(operationSignal));
+		console.log( showErrorMessage( operationSignal ) );
 	}
 	/*
 	Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
@@ -151,47 +152,47 @@
 	"multiplication", "division" e "mod".
 	*/
 	operationSignal = '-';
-	var subtraction = calculator(operationSignal);
-	if(subtraction){
+	var subtraction = calculator( operationSignal );
+	if( subtraction ){
 		number1 = 8;
 		number2 = 11;
-		console.log( showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2));
+		console.log( showOperationMessage( operationSignal, number1, number2 ), subtraction( number1, number2 ) );
 	}
 	else{
-		console.log(showErrorMessage(operationSignal));
+		console.log( showErrorMessage( operationSignal ) );
 	}
 
 	operationSignal = '*';
-	var multiplication = calculator(operationSignal);
-	if(multiplication){
+	var multiplication = calculator( operationSignal );
+	if( multiplication ){
 		number1 = 80;
 		number2 = 5;
-		console.log( showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2));
+		console.log( showOperationMessage( operationSignal, number1, number2 ), multiplication( number1, number2 ) );
 	}
 	else{
-		console.log(showErrorMessage(operationSignal));
+		console.log( showErrorMessage( operationSignal ) );
 	}
 
 	operationSignal = '/';
-	var division = calculator(operationSignal);
-	if(division){
+	var division = calculator( operationSignal );
+	if( division ){
 		number1 = 150;
 		number2 = 3;
-		console.log( showOperationMessage(operationSignal, number1, number2), division(number1, number2));
+		console.log( showOperationMessage( operationSignal, number1, number2 ), division( number1, number2 ) );
 	}
 	else{
-		console.log(showErrorMessage(operationSignal));
+		console.log( showErrorMessage( operationSignal ) );
 	}
 
 	operationSignal = '%';
-	var mod = calculator(operationSignal);
-	if(mod){
+	var mod = calculator( operationSignal );
+	if( mod ){
 		number1 = 150;
 		number2 = 11;
-		console.log( showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
+		console.log( showOperationMessage( operationSignal, number1, number2 ), mod( number1, number2 ) );
 	}
 	else{
-		console.log(showErrorMessage(operationSignal));
+		console.log( showErrorMessage( operationSignal ) );
 	}
 
 	/*
@@ -199,14 +200,14 @@
 	a mensagem de erro será mostrada no console.
 	*/
 	operationSignal = '???';
-	var invalid = calculator(operationSignal);
-	if(invalid){
+	var invalid = calculator( operationSignal );
+	if( invalid ){
 		number1 = 10;
 		number2 = 12;
-		console.log( showOperationMessage(operationSignal, number1, number2), invalid(number1, number2));
+		console.log( showOperationMessage( operationSignal, number1, number2 ), invalid( number1, number2 ) );
 	}
 	else{
-		console.log(showErrorMessage(operationSignal));
+		console.log( showErrorMessage( operationSignal ) );
 	}
 
 })();
