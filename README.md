@@ -1011,4 +1011,135 @@ console.log( subtract(10, 2) );
 console.log( subtract('JS', 2) );
 console.log( subtract({}, []) );
 ```
+## Laços (Loops) - do / while
 
+```js
+var counter = 1;
+
+do {
+    console.log( counter++ );
+} while(counter < 10); //necessário o ";" no final
+
+```
+
+- Primeiro ele executa a instrução depois faz a verificação da condição, caso seja verdadeira ele volta a executar a instrução caso falso pula fora do bloco. 
+
+
+## Laços (Loops) - for in
+- Percorre propriedades de um objeto
+
+```js
+var car = {
+    brand: 'WV',
+    model: 'Gol',
+    year: 2003
+}
+
+for( var prop in car){
+    console.log( prop );
+}
+console.log('doors in car?', 'doors' in car);
+
+for(var prop in car){
+    console.log( car[prop] );
+}
+```
+
+## Saltos
+
+- É uma instrunção que você utiliza para pular partes do seu código.
+
+### Saltos - return
+
+- O return somente pode ser utilizado dentro de funções.
+
+```js
+function myFunction(){
+    var number = 10;
+    if( number === 10 ){
+        return true;
+    }
+    var number2 = 5;
+    var name = 'Fábio Gonçalves';
+    return name + ' ' + number2;
+}
+console.log( myFunction() );
+```
+
+### Saltos - break
+
+```js
+var number = 10;
+switch( number ){
+    case 1: 
+        console.log( '1' );
+        break;
+    case 2: 
+        console.log( '2' );
+        break;
+    case 10: 
+        console.log( '10' );
+        break;
+    default: 
+        console.log( 'default' );
+}
+console.log( 'fim do switch' );
+```
+
+- Você pode utilizar o break também fora do switch
+
+```js
+for( var i = 0; i < 10; i++ ){
+    if( i === 5  ){
+        break;
+    }
+    console.log( i );
+}
+console.log( 'fim do for' );
+```
+
+```js
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+for( var i = 0; i < arr.length; i++ ){
+    if( i === 5 ){
+        break;
+    }
+    console.log( i );
+}
+console.log( 'fim do for' );
+```
+
+### Salto - continue
+
+```js
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+for( var i = 0; i < arr.length; i++ ){
+    if( i === 5 ){
+        continue;
+    }
+    console.log( i );
+}
+console.log( 'fim do for' );
+```
+
+```js
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+for( var i = 0; i < arr.length; i++ ){
+    if( i % 2 === 0 ){
+        continue;
+    }
+    console.log( i );
+}
+console.log( 'fim do for' );
+```
+
+```js
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+for( var i = 0; i < arr.length; i++ ){
+    if( i % 2 === 1 ){
+        continue;
+    }
+    console.log( i );
+}
+console.log( 'fim do for' );
+```
