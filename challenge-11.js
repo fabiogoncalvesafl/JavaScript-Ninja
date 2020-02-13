@@ -12,7 +12,7 @@
 	var once = false;
 	do {
 		console.log( 'Entrou ao menos uma vez!' );
-	} while( once === true );
+	} while( once );
 
 	/*
 	Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -36,7 +36,7 @@
 	'The person has [COUNTER] properties'
 	*/
 	var counter = 0;
-	for( property in person ){
+	for( var property in person ){
 		console.log( 'The '+property+' of person is '+person[ property ]+'' );
 		counter++;
 	}
@@ -50,14 +50,9 @@
 	'The person has more than 25 years old? [TRUE/FALSE]'
 	*/
 	function moreThan( age ){
-		if( person[ 'age' ] > age ){
-			return true;
-		}
-		else{
-			return false;
-		}
+		return person.age > age;
 	}
-	console.log( 'The person has more than 25 years old? '+moreThan( 25 )+'' );
+	console.log( 'The person has more than 25 years old? '+moreThan( 25 ) );
 
 	/*
 	Faça um loop de 0 a 20, que adicione cada número como um item de um
@@ -65,13 +60,17 @@
 	Mostre no console os números no array.
 	*/
 	console.log( 'De 0 a 10:' );
-	var numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ];
+
+	var numbers = [ ];
+
 	for( var i = 0; i <= 20; i++ ){
-		if( numbers[ i ] > 10 ){
-			continue;
+		if( i > 10 ){
+			break;
 		}
-		console.log( numbers[ i ] );
+
+		numbers.push( i );
 	}
+	console.log( numbers );
 
 	/*
 	Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -80,12 +79,13 @@
 	Mostrar no console os números do array.
 	*/
 	console.log( 'Pares de 0 a 20:' );
-	var numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ];
+	var numbers = [ ];
 	for( var i = 0; i <= 20; i++ ){
-		if( numbers[ i ] % 2 === 1 ){
+		if( i % 2 !== 0 ){
 			continue;
 		}
-		console.log( numbers[ i ] );
+		numbers.push( i );
 	}
+	console.log( numbers );
 
 })();
