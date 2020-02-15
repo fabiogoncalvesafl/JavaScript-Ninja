@@ -37,7 +37,7 @@
 	*/
 	var counter = 0;
 	for( var property in person ){
-		console.log( 'The '+property+' of person is '+person[ property ]+'' );
+		console.log( 'The '+property+' of person is '+person[ property ] );
 		counter++;
 	}
 	console.log( 'The person has '+counter+' properties' );
