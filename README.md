@@ -1231,3 +1231,195 @@ Object.prototype
 //{}
 
 ```
+
+### Criando Objetos - Object.create();
+
+- Cria um novo objeto
+- Esse objeto herda os valores do objeto referência 
+
+### Herança
+
+- Object.create();
+
+```js
+var obj = { x: 1, y: 2 };
+
+var obj2 = Object.create(obj);
+
+obj2
+//{}
+
+obj2.prototype
+//undefined
+
+obj2.x
+//1
+
+obj2.y
+//2
+
+obj.x = 2
+
+obj2.x
+//2
+
+obj2.x = 'lala'
+
+obj2.x
+//'lala'
+
+obj.x
+//2
+```
+
+- Como descobrir se as propriedades são do objeto ou foram herdadas
+- .hasOwnProperty();
+
+```js
+var obj = { x:1, y: 2 };
+
+var obj2 = Object.create( obj );
+
+var obj3 = Object.create( obj2 );
+
+obj
+//{ x:1, y: 2 }
+
+obj2
+//{}
+
+obj3
+//{}
+
+obj2.x = 2
+
+obj2
+//{ x:2 }
+
+obj3.x
+//2
+
+//Vamos verificar se as propriedades pertecem ao objeto
+
+obj.hasOwnProperty('x')
+//true
+
+obj.hasOwnProperty('y')
+//true
+
+obj2.hasOwnProperty('x')
+//true
+
+obj2.hasOwnProperty('y') 
+//false | //Foi herdada por isso retornou false
+
+obj3.hasOwnProperty('x')
+//false | //Foi herdada por isso retornou false
+
+obj2.hasOwnProperty('y')
+//false | //Foi herdada por isso retornou false
+
+//Vamos descobrir as propriedades que não são herdadas
+
+for(var prop in obj){
+    if( obj.hasOwnProperty( prop ) ){
+        console.log(prop);
+    }
+}
+//x
+//y
+
+for(var prop in obj2){
+    if( obj2.hasOwnProperty( prop ) ){
+        console.log(prop);
+    }
+}
+//x
+
+for(var prop in obj3){
+    if( obj3.hasOwnProperty( prop ) ){
+        console.log(prop);
+    }
+}
+//undefined
+```
+
+### Criando Objetos - Object.keys(obj)
+
+- Vai retornar um array com as propriedades do objeto
+
+```js
+obj
+//{ x:1, y: 2 }
+
+obj2
+//{ x:1 }
+
+obj3
+//{}
+
+Object.keys(obj)
+//[ 'x', 'y' ]
+
+Object.keys(obj).length
+//2
+
+```
+
+### Criando Objetos - obj.isPrototypeOf( otherObj )
+
+- Verificar se aquele objeto ele é prototipo de algum outro
+
+```js
+obj
+//{ x:1, y: 2 }
+
+obj2
+//{ x:1 }
+
+obj3
+//{}
+
+obj.isPrototypeOf( obj2 ) //obj é prototipo do obj2
+//true
+
+obj.isPrototypeOf( obj3 ) //obj é prototipo do obj3
+//true
+
+obj2.isPrototypeOf( obj3) //obj2 é prototipo do obj3
+//true
+```
+
+### Criando Objetos - JSON.stringify( obj )
+
+- Tranforma o objeto no formato JSON
+- JSON (Javascript Object Notation)
+
+```js
+obj
+//{ x:1, y: 2 }
+
+JSON.stringify(obj)
+//'{"x":1,"y":2}'
+
+var str = JSON.stringify(obj);
+str
+//'{"x":1,"y":2}'
+```
+
+### Criando Objetos - JSON.parse( str )
+
+- Tranforma o JSON no objeto novamente 
+- <http://json.org/json2.js>
+
+```js
+str
+//'{"x":1,"y":2}'
+
+JSON.parse(str)
+//{ x:1, y: 2 }
+
+```
+
+## Arrays
+
