@@ -1143,3 +1143,69 @@ for( var i = 0; i < arr.length; i++ ){
 }
 console.log( 'fim do for' );
 ```
+
+## Objetos
+
+- Mutáveis
+- Manipulados por referência
+
+```js
+var obj = {
+    prop1: 'prop1',
+    prop2: 'prop2'
+};
+
+var obj2 = {
+    prop1: 'prop1',
+    prop2: 'prop2'
+};
+
+obj.prop1 = 'propriedade 1'
+
+obj
+//{ prop1: 'propriedade 1', prop2: 'prop2' }
+
+delete obj.prop1
+
+obj
+//{ prop2: 'prop2' }
+
+obj.prop1 = 'prop1'
+
+obj
+//{ prop2: 'prop2', prop1: 'prop1' }
+
+obj2
+//{ prop1: 'prop1', prop2: 'prop2' }
+
+obj === obj2
+//false
+var objCopy = obj;
+
+objCopy
+//{ prop2: 'prop2', prop1: 'prop1' }
+
+obj
+//{ prop2: 'prop2', prop1: 'prop1' }
+
+objCopy === obj
+//true
+
+objCopy.prop1 = 'propriedade do objeto copy'
+objCopy
+//{ prop2: 'prop2', prop1: 'propriedade do objeto copy' }
+obj
+//{ prop2: 'prop2', prop1: 'propriedade do objeto copy' }
+
+```
+
+### Criando Objetos
+
+- Literais;
+- Como construtor (new);
+- Com Object.create();
+
+```js
+
+
+```
