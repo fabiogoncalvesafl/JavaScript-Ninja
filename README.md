@@ -1206,6 +1206,28 @@ obj
 - Com Object.create();
 
 ```js
+//Literal
+var obj = {};
+obj
+//{}
 
+//Com construtor (new)
+var newObj = new Object();
+newObj
+//{}
+
+//Com Object.create();
+var obj2 = Object.create();
+//Object prototype may only be an Object or null: undefined
+
+```
+
+### Criando Objetos - Object.prototype
+
+- Cada objeto criado em Javascript herda de Object.prototype 
+
+```js
+Object.prototype
+//{}
 
 ```
