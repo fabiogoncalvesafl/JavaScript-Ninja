@@ -1410,7 +1410,7 @@ str
 ### Criando Objetos - JSON.parse( str )
 
 - Tranforma o JSON no objeto novamente 
-- <http://json.org/json2.js>
+- <https://www.json.org/json-pt.html>
 
 ```js
 str
@@ -1423,3 +1423,49 @@ JSON.parse(str)
 
 ## Arrays
 
+- Adiciona e remove itens
+- push() e pop()
+
+```js
+var arr = [];
+
+arr[0] = 10
+arr[1] = 5
+arr[2] = 'oito'
+arr
+//[ 10, 5, 'oito' ]
+arr[12] = 'doze'
+arr
+//[ 10, 5, 'oito', , , , , , , , , , 'doze' ]
+arr[11]
+//undefined
+arr.push('treze') //adiciona no final do array
+arr
+//[ 10, 5, 'oito', , , , , , , , , , 'doze', 'treze' ]
+
+arr.pop() //remove do final do array
+//'treze'
+arr
+//[ 10, 5, 'oito', , , , , , , , , , 'doze' ]
+arr.pop()
+//'doze'
+arr
+//[ 10, 5, 'oito', , , , , , , , , , ]
+
+var arr = [];
+arr.push('arroz');
+arr.push('feijao');
+arr.push('macarrao');
+arr
+//['arroz', 'feijao', 'macarrao']
+
+var last = arr.pop();
+arr
+//['arroz', 'feijao']
+
+last
+//'macarrao'
+
+arr.length
+//2
+```
