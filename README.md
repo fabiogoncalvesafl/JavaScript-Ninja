@@ -1469,3 +1469,61 @@ last
 arr.length
 //2
 ```
+
+### Arrays - Juntar: join()
+
+```js
+arr
+//['arroz', 'feijao', 'macarrao']
+
+arr.join() //Ao juntar em uma unica string, o separador padrão é a virgula
+//'arroz,feijao,macarrao'
+
+arr
+//['arroz', 'feijao', 'macarrao']
+
+arr.join(' ')//Ao juntar o separador é um espaço em branco
+//'arroz feijao macarrao'
+
+arr.join(', ')//Ao junta fica uma virgula e um espaço em branco
+//'arroz, feijao, macarrao'
+
+console.log( 'Meu almoço hoje será ', arr.join( ', ' ) );
+//Meu almoço hoje será  arroz, feijao, macarrao
+```
+
+### Arrays - Inverter: reverse()
+
+```js
+arr
+//['arroz', 'feijao', 'macarrao']
+
+arr[0]
+//'arroz'
+arr[1]
+//'feijao'
+arr[2]
+//'macarrao'
+
+//modifica o array e inverte as posições do primeiro para o ultimo
+arr.reverse() 
+//[ 'macarrao', 'feijao', 'arroz' ]
+
+arr.reverse()
+//[ 'arroz', 'feijao', 'macarrao' ]
+
+```
+
+### Arrays - Ordem alfabetica: sort()
+
+```js
+arr
+//[ 'arroz', 'feijao', 'macarrao', 'lasanha' ]
+
+//modifica o array e coloca em ordem alfabetica
+arr.sort()
+//[ 'arroz', 'feijao', 'lasanha', 'macarrao' ]
+
+arr
+//[ 'arroz', 'feijao', 'lasanha', 'macarrao' ]
+```
