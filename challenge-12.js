@@ -109,6 +109,6 @@
 	/*
 	Mostre todos os itens do array acima, odenados alfabéticamente.
 	*/
-	console.log( myName.sort() );//Na tabela asci a letra maiscula vem primeiro
+	console.log( myName.sort() );//Na tabela ascii a letra maiscula vem primeiro
 
 })();
