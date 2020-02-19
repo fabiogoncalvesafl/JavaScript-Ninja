@@ -809,9 +809,11 @@ function adder(x){
 }
 
 var add2 = adder(2);
-console.log(add2(3)); //5
+console.log(add2(3)); 
+5
 
-console.log(adder(2)(3)); //5
+console.log(adder(2)(3)); 
+5
 ```
 
 - Como você passa objetos por parâmetros...
@@ -825,7 +827,7 @@ function getCarColor(mycar){
 }
 
 console.log(getCarColor(car));
-//'yellow'
+'yellow'
 
 function showOtherFunction(func){
     return func();
@@ -835,7 +837,7 @@ showOtherFunction(function(){
     return 'Function JS Ninja!';
 });
 
-//'Function JS Ninja!'
+'Function JS Ninja!'
 ```
 
 ## Função dentro de função é permitido.
@@ -952,7 +954,8 @@ console.log(otherSum()); //otherSum is not defined
 ```js
 var name = 'Fábio';
 
-name.length; //5
+name.length; 
+5
 ```
 
 -Então por que eles têm propriedades?
@@ -1163,39 +1166,40 @@ var obj2 = {
 obj.prop1 = 'propriedade 1'
 
 obj
-//{ prop1: 'propriedade 1', prop2: 'prop2' }
+{ prop1: 'propriedade 1', prop2: 'prop2' }
 
 delete obj.prop1
 
 obj
-//{ prop2: 'prop2' }
+{ prop2: 'prop2' }
 
 obj.prop1 = 'prop1'
 
 obj
-//{ prop2: 'prop2', prop1: 'prop1' }
+{ prop2: 'prop2', prop1: 'prop1' }
 
 obj2
-//{ prop1: 'prop1', prop2: 'prop2' }
+{ prop1: 'prop1', prop2: 'prop2' }
 
 obj === obj2
-//false
+false
 var objCopy = obj;
 
 objCopy
-//{ prop2: 'prop2', prop1: 'prop1' }
+{ prop2: 'prop2', prop1: 'prop1' }
 
 obj
-//{ prop2: 'prop2', prop1: 'prop1' }
+{ prop2: 'prop2', prop1: 'prop1' }
 
 objCopy === obj
-//true
+true
 
 objCopy.prop1 = 'propriedade do objeto copy'
 objCopy
-//{ prop2: 'prop2', prop1: 'propriedade do objeto copy' }
+{ prop2: 'prop2', prop1: 'propriedade do objeto copy' }
+
 obj
-//{ prop2: 'prop2', prop1: 'propriedade do objeto copy' }
+{ prop2: 'prop2', prop1: 'propriedade do objeto copy' }
 
 ```
 
@@ -1209,16 +1213,16 @@ obj
 //Literal
 var obj = {};
 obj
-//{}
+{}
 
 //Com construtor (new)
 var newObj = new Object();
 newObj
-//{}
+{}
 
 //Com Object.create();
 var obj2 = Object.create();
-//Object prototype may only be an Object or null: undefined
+'Object prototype may only be an Object or null: undefined'
 
 ```
 
@@ -1247,29 +1251,29 @@ var obj = { x: 1, y: 2 };
 var obj2 = Object.create(obj);
 
 obj2
-//{}
+{}
 
 obj2.prototype
-//undefined
+undefined
 
 obj2.x
-//1
+1
 
 obj2.y
-//2
+2
 
 obj.x = 2
 
 obj2.x
-//2
+2
 
 obj2.x = 'lala'
 
 obj2.x
-//'lala'
+'lala'
 
 obj.x
-//2
+2
 ```
 
 - Como descobrir se as propriedades são do objeto ou foram herdadas
@@ -1283,41 +1287,41 @@ var obj2 = Object.create( obj );
 var obj3 = Object.create( obj2 );
 
 obj
-//{ x:1, y: 2 }
+{ x:1, y: 2 }
 
 obj2
-//{}
+{}
 
 obj3
-//{}
+{}
 
 obj2.x = 2
 
 obj2
-//{ x:2 }
+{ x:2 }
 
 obj3.x
-//2
+2
 
 //Vamos verificar se as propriedades pertecem ao objeto
 
 obj.hasOwnProperty('x')
-//true
+true
 
 obj.hasOwnProperty('y')
-//true
+true
 
 obj2.hasOwnProperty('x')
-//true
+true
 
 obj2.hasOwnProperty('y') 
-//false | //Foi herdada por isso retornou false
+false //Foi herdada por isso retornou false
 
 obj3.hasOwnProperty('x')
-//false | //Foi herdada por isso retornou false
+false //Foi herdada por isso retornou false
 
 obj2.hasOwnProperty('y')
-//false | //Foi herdada por isso retornou false
+false //Foi herdada por isso retornou false
 
 //Vamos descobrir as propriedades que não são herdadas
 
@@ -1326,22 +1330,22 @@ for(var prop in obj){
         console.log(prop);
     }
 }
-//x
-//y
+x
+y
 
 for(var prop in obj2){
     if( obj2.hasOwnProperty( prop ) ){
         console.log(prop);
     }
 }
-//x
+x
 
 for(var prop in obj3){
     if( obj3.hasOwnProperty( prop ) ){
         console.log(prop);
     }
 }
-//undefined
+undefined
 ```
 
 ### Criando Objetos - Object.keys(obj)
@@ -1350,19 +1354,19 @@ for(var prop in obj3){
 
 ```js
 obj
-//{ x:1, y: 2 }
+{ x:1, y: 2 }
 
 obj2
-//{ x:1 }
+{ x:1 }
 
 obj3
-//{}
+{}
 
 Object.keys(obj)
-//[ 'x', 'y' ]
+[ 'x', 'y' ]
 
 Object.keys(obj).length
-//2
+2
 
 ```
 
@@ -1372,22 +1376,22 @@ Object.keys(obj).length
 
 ```js
 obj
-//{ x:1, y: 2 }
+{ x:1, y: 2 }
 
 obj2
-//{ x:1 }
+{ x:1 }
 
 obj3
-//{}
+{}
 
 obj.isPrototypeOf( obj2 ) //obj é prototipo do obj2
-//true
+true
 
 obj.isPrototypeOf( obj3 ) //obj é prototipo do obj3
-//true
+true
 
 obj2.isPrototypeOf( obj3) //obj2 é prototipo do obj3
-//true
+true
 ```
 
 ### Criando Objetos - JSON.stringify( obj )
@@ -1397,14 +1401,14 @@ obj2.isPrototypeOf( obj3) //obj2 é prototipo do obj3
 
 ```js
 obj
-//{ x:1, y: 2 }
+{ x:1, y: 2 }
 
 JSON.stringify(obj)
-//'{"x":1,"y":2}'
+'{"x":1,"y":2}'
 
 var str = JSON.stringify(obj);
 str
-//'{"x":1,"y":2}'
+'{"x":1,"y":2}'
 ```
 
 ### Criando Objetos - JSON.parse( str )
@@ -1414,10 +1418,10 @@ str
 
 ```js
 str
-//'{"x":1,"y":2}'
+'{"x":1,"y":2}'
 
 JSON.parse(str)
-//{ x:1, y: 2 }
+{ x:1, y: 2 }
 
 ```
 
@@ -1433,84 +1437,91 @@ arr[0] = 10
 arr[1] = 5
 arr[2] = 'oito'
 arr
-//[ 10, 5, 'oito' ]
+[ 10, 5, 'oito' ]
 arr[12] = 'doze'
 arr
-//[ 10, 5, 'oito', , , , , , , , , , 'doze' ]
+[ 10, 5, 'oito', , , , , , , , , , 'doze' ]
+
 arr[11]
-//undefined
+undefined
+
 arr.push('treze') //adiciona no final do array
+
 arr
-//[ 10, 5, 'oito', , , , , , , , , , 'doze', 'treze' ]
+[ 10, 5, 'oito', , , , , , , , , , 'doze', 'treze' ]
 
 arr.pop() //remove do final do array
-//'treze'
+'treze'
+
 arr
-//[ 10, 5, 'oito', , , , , , , , , , 'doze' ]
+[ 10, 5, 'oito', , , , , , , , , , 'doze' ]
+
 arr.pop()
-//'doze'
+'doze'
+
 arr
-//[ 10, 5, 'oito', , , , , , , , , , ]
+[ 10, 5, 'oito', , , , , , , , , , ]
 
 var arr = [];
 arr.push('arroz');
 arr.push('feijao');
 arr.push('macarrao');
+
 arr
-//['arroz', 'feijao', 'macarrao']
+['arroz', 'feijao', 'macarrao']
 
 var last = arr.pop();
 arr
-//['arroz', 'feijao']
+['arroz', 'feijao']
 
 last
-//'macarrao'
+'macarrao'
 
 arr.length
-//2
+2
 ```
 
 ### Arrays - Juntar: join()
 
 ```js
 arr
-//['arroz', 'feijao', 'macarrao']
+['arroz', 'feijao', 'macarrao']
 
 arr.join() //Ao juntar em uma unica string, o separador padrão é a virgula
-//'arroz,feijao,macarrao'
+'arroz,feijao,macarrao'
 
 arr
-//['arroz', 'feijao', 'macarrao']
+['arroz', 'feijao', 'macarrao']
 
 arr.join(' ')//Ao juntar o separador é um espaço em branco
-//'arroz feijao macarrao'
+'arroz feijao macarrao'
 
 arr.join(', ')//Ao junta fica uma virgula e um espaço em branco
-//'arroz, feijao, macarrao'
+'arroz, feijao, macarrao'
 
 console.log( 'Meu almoço hoje será ', arr.join( ', ' ) );
-//Meu almoço hoje será  arroz, feijao, macarrao
+'Meu almoço hoje será  arroz, feijao, macarrao'
 ```
 
 ### Arrays - Inverter: reverse()
 
 ```js
 arr
-//['arroz', 'feijao', 'macarrao']
+['arroz', 'feijao', 'macarrao']
 
 arr[0]
-//'arroz'
+'arroz'
 arr[1]
-//'feijao'
+'feijao'
 arr[2]
-//'macarrao'
+'macarrao'
 
 //modifica o array e inverte as posições do primeiro para o ultimo
 arr.reverse() 
-//[ 'macarrao', 'feijao', 'arroz' ]
+[ 'macarrao', 'feijao', 'arroz' ]
 
 arr.reverse()
-//[ 'arroz', 'feijao', 'macarrao' ]
+[ 'arroz', 'feijao', 'macarrao' ]
 
 ```
 
@@ -1518,14 +1529,14 @@ arr.reverse()
 
 ```js
 arr
-//[ 'arroz', 'feijao', 'macarrao', 'lasanha' ]
+[ 'arroz', 'feijao', 'macarrao', 'lasanha' ]
 
 //modifica o array e coloca em ordem alfabetica
 arr.sort()
-//[ 'arroz', 'feijao', 'lasanha', 'macarrao' ]
+[ 'arroz', 'feijao', 'lasanha', 'macarrao' ]
 
 arr
-//[ 'arroz', 'feijao', 'lasanha', 'macarrao' ]
+[ 'arroz', 'feijao', 'lasanha', 'macarrao' ]
 ```
 
 ### Arrays - Converter em string: toString()
@@ -1536,9 +1547,9 @@ arr
 ```js
 var arr = [1, 2, 3, 4];
 arr.toString()
-//'1,2,3,4'
+'1,2,3,4'
 arr
-//[1, 2, 3, 4]
+[1, 2, 3, 4]
 
 ```
 
@@ -1549,9 +1560,9 @@ arr
 ```js
 var arr = [1, 2, 3, 4];
 arr.concat(5)
-//[1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
 arr
-//[1, 2, 3, 4]
+[1, 2, 3, 4]
 
 ```
 
@@ -1563,9 +1574,9 @@ arr
 ```js
 var arr = [1, 2, 3, 4];
 arr.unshift(0);
-//5
+5
 arr
-//[0, 1, 2, 3, 4]
+[0, 1, 2, 3, 4]
 
 ```
 
@@ -1577,9 +1588,9 @@ arr
 ```js
 var arr = [0, 1, 2, 3, 4];
 arr.shift()
-//0
+0
 arr
-//[1, 2, 3, 4]
+[1, 2, 3, 4]
 
 ```
 
@@ -1591,18 +1602,18 @@ arr
 ```js
 var arr = [1, 2, 3, 4, 5];
 arr.slice(1)
-//[2, 3, 4, 5]
+[2, 3, 4, 5]
 arr
-//[1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
 
 arr.slice(0, 2)//quero o trecho do indice 0 ao 1 então o destino tem que ser sempre posterior
-//[1, 2]
+[1, 2]
 
 arr.slice(1, 4)//quero o trecho do indice 1 ao 3 então o destino tem que ser sempre posterior
-//[2, 3, 4]
+[2, 3, 4]
 
 arr
-//[1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
 ```
 
 ### Arrays - adiciona e remove itens do array: splice()
@@ -1613,22 +1624,22 @@ arr
 ```js
 var arr = [1, 2, 3, 4, 5];
 arr.splice(3)
-//[4, 5]
+[4, 5]
 arr
-//[1, 2, 3]
+[1, 2, 3]
 
 var arr = [1, 2, 3, 4, 5, 6, 7];
 arr.splice(1, 3) //apartir de qual indice quero remover '1' e quantos itens quero remover '3'
-//[2, 3, 4]
+[2, 3, 4]
 
 arr
-//[1, 5, 6, 7]
+[1, 5, 6, 7]
 
 arr.splice(1, 0, 2, 3, 4) //apartir de qual indice quero adicionar '1', quantos itens quero remover '0' e os items (2, 3, 4)
-//[2, 3, 4]
+[2, 3, 4]
 
 arr
-//[1, 2, 3, 4, 5, 6, 7]
+[1, 2, 3, 4, 5, 6, 7]
 
 ```
 
@@ -1670,7 +1681,7 @@ arr.forEach( function( item ){
     sum += item;
 });
 console.log( sum );
-//28
+28
 
 ```
 
