@@ -1527,3 +1527,121 @@ arr.sort()
 arr
 //[ 'arroz', 'feijao', 'lasanha', 'macarrao' ]
 ```
+
+### Arrays - Converter em string: toString()
+- Converte no formato de string
+- Separa os itens por ',' por padrão
+- Não modifica o array
+
+```js
+var arr = [1, 2, 3, 4];
+arr.toString()
+//'1,2,3,4'
+arr
+//[1, 2, 3, 4]
+
+```
+
+### Arrays - Concatenar: concat()
+- Vai concatenar qualquer item ao array
+- Não modifica o array
+
+```js
+var arr = [1, 2, 3, 4];
+arr.concat(5)
+//[1, 2, 3, 4, 5]
+arr
+//[1, 2, 3, 4]
+
+```
+
+### Arrays - Inserir no inicio do array: unshift()
+- Vai adicionar item no inicio do array
+- Modifica o array
+- Retorna o length do array
+
+```js
+var arr = [1, 2, 3, 4];
+arr.unshift(0);
+//5
+arr
+//[0, 1, 2, 3, 4]
+
+```
+
+### Arrays - Remove do inicio do array: shift()
+- Vai remover item no inicio do array
+- Modifica o array
+- Retorna o item removido do array
+
+```js
+var arr = [0, 1, 2, 3, 4];
+arr.shift()
+//0
+arr
+//[1, 2, 3, 4]
+
+```
+
+### Arrays - Recorta um trecho do array: slice()
+- Retorna um pedaço do array
+- Possui dois parametros (origem, destino)
+- Não modifica o array
+
+```js
+var arr = [1, 2, 3, 4, 5];
+arr.slice(1)
+//[2, 3, 4, 5]
+arr
+//[1, 2, 3, 4, 5]
+
+arr.slice(0, 2)//quero o trecho do indice 0 ao 1 então o destino tem que ser sempre posterior
+//[1, 2]
+
+arr.slice(1, 4)//quero o trecho do indice 1 ao 3 então o destino tem que ser sempre posterior
+//[2, 3, 4]
+
+arr
+//[1, 2, 3, 4, 5]
+```
+
+### Arrays - adiciona e remove itens do array: splice()
+- Pode adicionar quanto remover itens do array
+- Possui três parametros (indice, adiciona/remove elemento, item)
+- Modifica o array
+
+```js
+var arr = [1, 2, 3, 4, 5];
+arr.splice(3)
+//[4, 5]
+arr
+//[1, 2, 3]
+
+var arr = [1, 2, 3, 4, 5, 6, 7];
+arr.splice(1, 3) //apartir de qual indice quero remover '1' e quantos itens quero remover '3'
+//[2, 3, 4]
+
+arr
+//[1, 5, 6, 7]
+
+arr.splice(1, 0, 2, 3, 4) //apartir de qual indice quero adicionar '1', quantos itens quero remover '0' e os items (2, 3, 4)
+//[2, 3, 4]
+
+arr
+//[1, 2, 3, 4, 5, 6, 7]
+
+```
+
+### Arrays - Laço de repetição: forEach()
+
+
+### Arrays - : every()
+
+
+### Arrays - : some()
+
+
+### Arrays - : map()
+
+
+### Arrays - : filter()
