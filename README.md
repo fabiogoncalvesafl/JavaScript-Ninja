@@ -1633,10 +1633,50 @@ arr
 ```
 
 ### Arrays - Laço de repetição: forEach()
+- É um laço de repetição parecido com o for
+- Recebe por parametro uma função
+- Essa função recebe por parametro (item, index, array)
+- Esse metodo é mais performático (mais rápido) que o for
 
+```js
+var arr = [1, 2, 3, 4, 5, 6, 7];
+
+arr.forEach(function(item, index, array){
+    console.log(item , index, array);
+});
+
+1 0 [ 1, 2, 3, 4, 5, 6, 7 ]
+2 1 [ 1, 2, 3, 4, 5, 6, 7 ]
+3 2 [ 1, 2, 3, 4, 5, 6, 7 ]
+4 3 [ 1, 2, 3, 4, 5, 6, 7 ]
+5 4 [ 1, 2, 3, 4, 5, 6, 7 ]
+6 5 [ 1, 2, 3, 4, 5, 6, 7 ]
+7 6 [ 1, 2, 3, 4, 5, 6, 7 ]
+
+arr.forEach(function(item){
+    console.log(item);
+});
+
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+
+var sum = 0;
+arr.forEach( function( item ){
+    sum += item;
+});
+console.log( sum );
+//28
+
+```
 
 ### Arrays - : every()
-
+- Ele é um predicado do array
+- Ele retorna true ou false
 
 ### Arrays - : some()
 
