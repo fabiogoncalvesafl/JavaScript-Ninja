@@ -1689,10 +1689,71 @@ console.log( sum );
 - Ele é um predicado do array
 - Ele retorna true ou false
 
-### Arrays - : some()
+```js
+var arr = [ 1, 2, 3, 4, 5, 6, 7 ];
+var every = arr.every(function(item){
+    console.log( item );
+    return item < 5;
+});
+console.log( every );
+```
 
+### Arrays - : some()
+- Ele retorna true ou false
+- Se pelo menos um item for true ele retorna true
+
+```js
+var arr = [ 1, 2, 3, 4, 5, 6, 7 ];
+var some = arr.some(function(item){
+    return item % 2 === 0;
+});
+console.log( some );
+```
 
 ### Arrays - : map()
+- Percorre o array e retorna um novo array
+- Não modifica o array
 
+```js
+var arr = [ 1, 2, 3, 4, 5 ];
+var map = arr.map(function(item, index, array){
+    return item;
+});
+console.log( arr, map );
+
+map = arr.map(function(item, index, array){
+    return { 'index': index , 'item': item };
+});
+console.log( map );
+
+// Construindo com forEach
+
+var newArr = [];
+arr.forEach(function(item, index, array){
+    newArr.push( { index: index, item: item } );
+});
+console.log( 'newArr:' );
+console.log( newArr );
+```
 
 ### Arrays - : filter()
+- Percorre o array e retorna um novo array
+- Filtra os itens do array
+
+```js
+var arr = [ 1, 2, 3, 4, 5 ];
+var filter = arr.filter(function(item, index, array){
+    return item > 2;
+});
+console.log( filter );
+
+//Utilizando map e filter
+
+var arr = [ 1, 2, 3, 4, 5 ];
+var map = arr.map(function(item){
+    return item + 10;
+}).filter(function(item){
+    return item > 12;
+});
+console.log( map );
+```
